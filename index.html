@@ -35,6 +35,25 @@
       });
 
 
+      map.on('load', () => {
+
+            map.addSource('institutions', {
+                type: 'geojson',
+                data: 'https://raw.githubusercontent.com/fmvaldezg/BeninBronzes_draft/main/data/institutions.geojson'
+            });
+
+            map.addLayer({
+              'id': 'instution_points',
+              'type': 'circle',
+              'source': 'institutions',
+              'paint': {
+                'circle-color': '#51bbd6',
+                'circle-radius': 6
+              }
+              });
+
+      })
+
     </script>
   </body>
 </html>
